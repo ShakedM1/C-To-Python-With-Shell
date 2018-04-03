@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication42
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //string cmd = @"C:\Users\shaked\leaf.py";            
+            //ProcessStartInfo start = new ProcessStartInfo();
+            //start.FileName = @"D:\anaconda\python.exe";
+            //start.Arguments = string.Format("{0}", cmd);
+            //start.UseShellExecute = false;
+            //start.RedirectStandardOutput = true;
+            //using (Process process = Process.Start(start))
+            //{
+            //    using (StreamReader reader = process.StandardOutput)
+            //    {
+            //        string result = reader.ReadToEnd();
+            //        Console.Write(result);
+            //    }
+            //}
+            CSharp2Python py = new CSharp2Python();
+            py.SetCommand("asgs");
+            string str=py.ExecuteCommandWithReturn(@"C:\Users\shaked\leaf.py");
+            Console.WriteLine(str);
+            
+        }
+    }
+}
