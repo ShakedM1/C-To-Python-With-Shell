@@ -27,10 +27,15 @@ namespace ConsoleApplication42
             //    }
             //}
             CSharp2Python py = new CSharp2Python();
-            py.SetCommand("asgs");
-            string str=py.ExecuteCommandWithReturn(@"C:\Users\shaked\leaf.py");
+            Console.WriteLine(py.PythonPath());
+            Console.WriteLine("******");
+            string str = py.ExecuteScriptWithReturn(@"C:\Users\shaked\leaf.py");            
             Console.WriteLine(str);
-            
+            Console.WriteLine("******");
+            str = py.ExecuteCommandWithReturn("python leaf.py");
+            Console.WriteLine(str);
+            Console.WriteLine("******");
+            py.ExecuteCommand("start");
         }
     }
 }
